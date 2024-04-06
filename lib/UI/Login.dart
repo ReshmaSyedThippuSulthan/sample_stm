@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:simplestm/provider.dart';
+import 'package:simplestm/provider/provider.dart';
 import 'package:simplestm/result.dart';
 
-class Page1 extends StatefulWidget {
-  const Page1({super.key});
+class LogInScreen extends StatefulWidget {
+  const LogInScreen({super.key});
 
   @override
-  State<Page1> createState() => _Page1State();
+  State<LogInScreen> createState() => _LogInScreenState();
 }
 
-class _Page1State extends State<Page1> {
+class _LogInScreenState extends State<LogInScreen> {
   late TextEditingController namecontroller;
   late TextEditingController agecontroller;
 
@@ -43,7 +43,7 @@ class _Page1State extends State<Page1> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Enter Name:"),
+              const Text("Enter EmalID:"),
               const SizedBox(
                 height: 20,
               ),
@@ -56,7 +56,7 @@ class _Page1State extends State<Page1> {
               const SizedBox(
                 height: 40,
               ),
-              const Text("Enter Age:"),
+              const Text("Enter PWD:"),
               const SizedBox(
                 height: 20,
               ),
@@ -72,7 +72,7 @@ class _Page1State extends State<Page1> {
               Center(
                 child: ElevatedButton(
                     onPressed: () {
-                      Provider.of<EmployeeData>(context, listen: false).update(
+                      Provider.of<EmployeeData>(context, listen: false).insert(
                           name: namecontroller.text, age: agecontroller.text);
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => const ResultScreen()));

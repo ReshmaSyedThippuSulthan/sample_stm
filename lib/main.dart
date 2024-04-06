@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:simplestm/page1.dart';
-import 'package:simplestm/provider.dart';
+import 'package:simplestm/UI/HomeScreen.dart';
+import 'package:simplestm/UI/Login.dart';
+import 'package:simplestm/provider/provider.dart';
 
 void main() {
   runApp(const Employeestm());
@@ -24,7 +25,7 @@ class _EmployeestmState extends State<Employeestm> {
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Employee Data',
-        home: Page1(),
+        home: HomeScreen(),
       ),
     );
   }
